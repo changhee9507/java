@@ -8,5 +8,6 @@ System.out.print("Welcome to java study repo");
  
  
  ### Contents
- > 1.변수  ?.Exercise  
+  1.변수
+  2.EXERCISE
  
