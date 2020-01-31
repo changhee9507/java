@@ -13,11 +13,11 @@ public class WS01_02 {
 		
 		
 		
-		System.out.println(">>°¡À§¹ÙÀ§º¸ °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù. ¾Æ·¡ º¸±â Áß ÇÏ³ª¸¦ °í¸£¼¼¿ä.");
-		System.out.println("1. 5ÆÇ 3½Â");
-		System.out.println("2. 3ÆÇ 2½Â");
-		System.out.println("3. 1ÆÇ 1½Â");
-		System.out.print("¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä. ");
+		System.out.println(">>ê°€ìœ„ë°”ìœ„ë³´ ê²Œì„ì„ ì‹œì‘í•©ë‹ˆë‹¤. ì•„ë˜ ë³´ê¸° ì¤‘ í•˜ë‚˜ë¥¼ ê³ ë¥´ì„¸ìš”.");
+		System.out.println("1. 5íŒ 3ìŠ¹");
+		System.out.println("2. 3íŒ 2ìŠ¹");
+		System.out.println("3. 1íŒ 1ìŠ¹");
+		System.out.print("ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”. ");
 		
 		int choice = scanner.nextInt();
 		
@@ -31,11 +31,11 @@ public class WS01_02 {
 		while(true){
 			game();
 			if(comWinNum == requiredWinNum) {
-				System.out.println("### ÄÄÇ»ÅÍ ½Â¸®!");
+				System.out.println("### ì»´í“¨í„° ìŠ¹ë¦¬!");
 				return;
 			}
 			else if(userWinNum == requiredWinNum) {
-				System.out.println("### À¯Àú ½Â¸®!");
+				System.out.println("### ìœ ì € ìŠ¹ë¦¬!");
 				return;
 			}
 			else {
@@ -47,33 +47,33 @@ public class WS01_02 {
 
 	private static void game() {
 		// TODO Auto-generated method stub
-		System.out.print("°¡À§¹ÙÀ§º¸ Áß ÇÏ³ª ÀÔ·Â: ");
+		System.out.print("ê°€ìœ„ë°”ìœ„ë³´ ì¤‘ í•˜ë‚˜ ì…ë ¥: ");
 		String userInput = scanner.next();
 		
 		int comRPS = (int) (Math.random() * 3) + 1;
 		int userRPS = 0;
 		
 		switch(userInput) {
-		case "°¡À§": userRPS = 1; break;
-		case "¹ÙÀ§":
-		case "ÁÖ¸Ô": userRPS = 2; break;
-		case "º¸" : userRPS = 3; break;
+		case "ê°€ìœ„": userRPS = 1; break;
+		case "ë°”ìœ„":
+		case "ì£¼ë¨¹": userRPS = 2; break;
+		case "ë³´" : userRPS = 3; break;
 		default:
-			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			System.out.println("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.");
 			return;
 		}
 		
 		if(comRPS == userRPS) {
-			System.out.println("¹«½ÂºÎÀÔ´Ï´Ù. ");
+			System.out.println("ë¬´ìŠ¹ë¶€ì…ë‹ˆë‹¤. ");
 		}
 		else if( ((comRPS == 1) && (userRPS == 2))||
 				 ((comRPS == 2) && (userRPS == 3)) ||
 				 ((comRPS == 3) && (userRPS == 1))) {
-			System.out.println("ÀÌ°å½À´Ï´Ù! ");
+			System.out.println("ì´ê²¼ìŠµë‹ˆë‹¤! ");
 			userWinNum++;
 		}
 		else {
-			System.out.println("Á³½À´Ï´Ù! ");
+			System.out.println("ì¡ŒìŠµë‹ˆë‹¤! ");
 			comWinNum++;	
 		}
 		return;
