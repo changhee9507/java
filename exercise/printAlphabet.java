@@ -1,6 +1,6 @@
 package wsjava;
 
-public class WS01_01 {
+public class printAlphabet {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
