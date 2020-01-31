@@ -1,4 +1,7 @@
-package wsjava;
+/** 
+*
+* Contents: 컴퓨터와 가위바위보를 하는 게임
+*/
 
 import java.util.Scanner;
 
