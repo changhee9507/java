@@ -1,4 +1,7 @@
-package wsjava;
+/**
+*
+* contents: 알파벳을 특정 모양으로 출력하는 코드 
+*/
 
 public class printAlphabet {
 
