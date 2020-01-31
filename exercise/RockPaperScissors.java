@@ -2,7 +2,7 @@ package wsjava;
 
 import java.util.Scanner;
 
-public class WS01_02 {
+public class RockPaperScissors {
 
 	static int requiredWinNum = 0;
 	static int comWinNum = 0;
