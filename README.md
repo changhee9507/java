@@ -8,7 +8,11 @@ System.out.print("Welcome to java study repo");
  
  
  ### Contents
- > 변수  
-  
- > EXERCISE
+ > Grammer
+ 
+ >> 1. variable
+ 
+ >> 2. exercise
+ 
+ > Alogorithm
  
