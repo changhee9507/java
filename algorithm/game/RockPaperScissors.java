@@ -4,7 +4,7 @@
 *  @author Changhee Yoon
 */
 
-package algorithm;
+package game;
 
 import java.util.Scanner;
 

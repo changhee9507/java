@@ -4,7 +4,7 @@
 * @author Changhee Yoon
 */
 
-package algorithm;
+package printing;
 
 public class printAlphabet {
 
