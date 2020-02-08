@@ -15,7 +15,7 @@ public class WrapperClassTest {
 		int num4 = 123567;
 		String s = String.valueOf(num4);
 		
-		
+		System.out.println(s);
 	}
 
 }
