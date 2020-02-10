@@ -4,7 +4,7 @@
 * @author Changhee Yoon
 */
 
-package printing;
+package array;
 
 public class printAlphabet {
 

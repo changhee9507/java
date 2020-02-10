@@ -1,10 +1,45 @@
+/**
+ * String과 관련된 성질 및 함수를 정리
+ * 
+ * @author Changhee Yoon
+ */
+
 package javalang.string;
 
 public class StringTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		/* Initialization
+		 * 
+		 * 스트링은 자체적으로 초기화 되지 않기 때문에 바로 출력하면 컴파일 에러가 발생*/
+		/*String s0;
+		System.out.println(s0);
+		*/
+		
+		/* String generation
+		 * 
+		 * new를 사용하면 새로운 객체를 생성해서  String을 저장하고
+		 * 그렇지 않다면 스트링이 이전에 생성되었는지 확인하고 있으면 같은 것을 가리키도록 만든다. 
+		 */
+		String t1 = new String("a");
+		String t2 = new String("a");
+		String t3 = "a";
+		String t4 = "a";
+		
+		
+		if(t1 == t2) {
+			System.out.println("t1 == t2");
+		}
+		if(t1 == t3) {
+			System.out.println("t1 == t3");
+		}
+		if(t3 == t4) {
+			System.out.println("t3 == t4");
+		}
+		System.out.println();
+		
 		String s1 = "Hello";
+		
 		
 		/* concat */
 		System.out.println("TEST concat");
