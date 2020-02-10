@@ -34,62 +34,46 @@ public class GoBackRoom {
 			for (int i = 0; i < studentNum; i++) {
 				int from = 0;
 				int to = 0;
-
-				/* 방 번호가 작은 곳에서 작은 곳으로 이동 */
-				if (moveInfo[i][0] < moveInfo[i][1]) {
-					/* set starting point */
-					if (moveInfo[i][0] % 2 == 0) {
-						from = moveInfo[i][0] - 1;
-					} else {
-						from = moveInfo[i][0];
-					}
-
-					/* set end point */
-					if (moveInfo[i][1] % 2 == 0) {
-						to = moveInfo[i][1];
-					} else {
-						to = moveInfo[i][1] + 1;
-					}
-
-					/* count */
-					for (int j = from; j <= to; j++) {
-						roomRoute[j]++;
-					}
+				
+				
+				/* 방향은 오른쪽으로 */
+				if(moveInfo[i][0] > moveInfo[i][1]) {
+					int tmp = moveInfo[i][1];
+					moveInfo[i][1] = moveInfo[i][0];
+					moveInfo[i][0] = tmp;
 				}
-				/* 방 번호가 큰 곳에서 작은 곳으로 이동 */
-				else {
-					
-					/* set starting point */
-					if (moveInfo[i][0] % 2 == 0) {
-						from = moveInfo[i][0];
-					} else {
-						from = moveInfo[i][0]+1;
-					}
+				
+				/* 방 번호가 작은 곳에서 큰 곳으로 이동 */
+				/* set starting point */
+				if (moveInfo[i][0] % 2 == 0) {
+					from = moveInfo[i][0] - 1;
+				} else {
+					from = moveInfo[i][0];
+				}
 
-					/* set end point */
-					if (moveInfo[i][1] % 2 == 0) {
-						to = moveInfo[i][1] - 1;
-					} else {
-						to = moveInfo[i][1];
-					}
-					
-					/* count*/
-					for (int j = from; j >= to; j--) {
-						roomRoute[j]++;
-					}
-					
-				}				
+				/* set end point */
+				if (moveInfo[i][1] % 2 == 0) {
+					to = moveInfo[i][1];
+				} else {
+					to = moveInfo[i][1] + 1;
+				}
+
+				/* count */
+				for (int j = from; j <= to; j++) {
+					roomRoute[j]++;
+				}
+
 			}
 			/* print roomRoute */
-			
+
 			int max = -1;
-			for(int i=0; i<401; i++) {
-				if(roomRoute[i] > max) {
+			for (int i = 0; i < 401; i++) {
+				if (roomRoute[i] > max) {
 					max = roomRoute[i];
 				}
 			}
 
-			//System.out.println(Arrays.toString(roomRoute));
+			// System.out.println(Arrays.toString(roomRoute));
 			System.out.printf("#%d %d\n", testCase, max);
 
 		}
