@@ -1,18 +1,13 @@
-/**
- * JungAl 1828 solution
- * 
- * @author Changhee Yoon
- */
-
-package etc;
+package hwjava08_서울_7반_윤창희;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Scanner;
 
-public class Refrigerator {
+public class hwjava08_서울_7반_윤창희 {
 
 public static void main(String[] args) throws NumberFormatException, IOException {
 		
