@@ -61,7 +61,7 @@ public class CompareableComparator {
 		      
 		      
 		      
-		      System.out.println(" 2차 배열의 정렬, 첫 원소 기준 ");
+		      System.out.println("2차 배열의 정렬, 첫 원소 기준");
 		      int[][] arr3 = new int[][]{{1,10},{3,50}, {8,50},{2,80},{4,10}};
 		      
 		      Arrays.sort(arr3, new Comparator<int[]>() {

@@ -6,6 +6,8 @@
 
 package javalang.string;
 
+import java.util.Arrays;
+
 public class StringTest {
 
 	public static void main(String[] args) {
@@ -99,6 +101,15 @@ public class StringTest {
 		if(s10.contains("Class")) {		/* 특정 스트링을 포함하는지 확인하고 boolean리턴, 공백도 인식*/
 			System.out.println("s10 contains Class!");
 		}
+		
+		/* split */
+		System.out.println("\nTEST split");
+		
+		String s11 = "171 *";
+		String[] strArray = s11.split(" ");
+		
+		System.out.println(Arrays.toString(strArray));
+		System.out.println(strArray[1]);
 	}
 
 }
