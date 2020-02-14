@@ -32,7 +32,7 @@ public class Solution_D4_3289 {
 				if (op == 0) { /* union */
 					if(rep1 == rep2) continue;
 					else {
-						parents[ele2] = rep1;
+						parents[rep2] = rep1;
 					}
 				} else { /* check whether they are in same set */
 
