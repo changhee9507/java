@@ -1,3 +1,8 @@
+/**
+ * 백준 3109 빵집 
+ * 
+ */
+
 package array;
 
 import java.util.Arrays;
@@ -27,60 +32,60 @@ public class Bakery {
 				map[i][j] = input.charAt(j);
 			}
 		}
-
 		
-
-		/* 처음부터 시작 */
-		for (int row = 0; row < rowSize; row++) {
+		/* 맵 출력 */
+		/*
+		 * for (int i =0; i< rowSize; i++) { for(int j =0; j < colSize; j++) {
+		 * System.out.print(map[i][j] + " " ); } System.out.println(); }
+		 */
+		
+		for(int row = 0; row < rowSize; row++) {
 			reachEnd = false;
-			findRoot(row, 0);
-			
-			
+			dfs(row, 0);
 		}
-
+		
+		System.out.println(count);
+		
+		
 	}
 
 	/* 우상, 우, 우하 */
 	static int[] dRow = {-1, 0, 1};
 	static int[] dCol = {1, 1, 1};
-	static void findRoot(int row, int col) {
+	
+	static void dfs(int row, int col) {
+		boolean called = false;
+		/* 출력 */
 		
-		/* 맵 출력 */
-		for (int i = 0; i < rowSize; i++) {
-			for (int j = 0; j < colSize; j++) {
-				System.out.print(map[i][j] + " ");
-			}
-			System.out.println();
-		}
-		System.out.println();
-		
-		if(reachEnd == true) {
-			return;
-		}
-		
-		map[row][col] = '#';
-		
-		if(col == colSize-1) {
+		  for(int i = 0; i< rowSize; i++) { for(int j=0; j< colSize; j++) {
+		  System.out.print(map[i][j] + " "); } System.out.println(); }
+		  System.out.println();
+		 
+		if( col == colSize -2) { /* 기저 조건 */
+			map[row][col] = '#';
 			count++;
 			reachEnd = true;
 			return;
 		}
 		
-		for(int i=0; i<3; i++) {
+		for(int i=0; i<3 && !reachEnd; i++) {
 			int newRow = row + dRow[i];
-			int newCol = col + dRow[i];
+			int newCol = col + dCol[i];
+			if(newRow < 0 || newCol <0 || newRow >= rowSize || newCol >= colSize) {
+				continue;
+			}
 			
-			if(newRow < 0|| newCol <0 || newRow >= rowSize || newCol > colSize) {
+			if(map[newRow][newCol] == 'x' || map[newRow][newCol] == '#'){
 				continue;
 			}
-			else if(map[newRow][newCol] == 'x' || map[newRow][newCol] == '#' ){
-				continue;
-			}
-			else {
-				findRoot(newRow, newCol);
-			}
+			dfs(newRow, newCol);
+			called = true;
 		}
 		
-		map[row][col] = '.';
-}
+		if(called) {
+			map[row][col] = '.';
+		}
+		
+	}
+	
 }
