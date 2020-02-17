@@ -41,6 +41,7 @@ public class Tomato {
 				}
 			}
 		}
+		/* 시작부터 익지 않은 토마토가 없으면 0을 출력하고 종료 */
 		if(!zeroExist) {
 			System.out.println(0);
 			return;
@@ -52,7 +53,6 @@ public class Tomato {
 		 * System.out.printf("%3s ", map[i][j]); } System.out.println(); }
 		 */
 			
-		/* 이전의 맵과 차이가 없으면 스톱 */
 		while(!tmtLoc.isEmpty()) {
 			
 			/*
@@ -82,7 +82,7 @@ public class Tomato {
 		
 	}
 	
-	/* 상하좌우*/
+	/* 상하좌우 델타 */
 	static int[] dRow = {-1, 1, 0 , 0};
 	static int[] dCol = {0, 0, -1, 1};
 	
@@ -94,7 +94,7 @@ public class Tomato {
 			days= loc[2];
 		}
 		
-		/* 상하좌우에 토마토를 확인 */
+		/* 상하좌우에 토마토를 확인하고 익지 않은 토마토가 있으면 익게 만든다음 위치를 큐에 저장하고 day카운트를 올림 */
 		for(int i =0; i<4; i++) {
 			int row = loc[0] + dRow[i];
 			int col = loc[1] + dCol[i];
