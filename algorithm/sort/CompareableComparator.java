@@ -1,8 +1,9 @@
 /**
- * Comporator이 우선 순위가 높다.
+ * Comparable은 interface로 CompareTo라는 함수를 구현하도록 만들어서
+ * 객체 포인터 자체로는 비교 불가능한 것을 개발자의 의도제대로 비교할 수 있게 만들어준다. 
  * 
- * Comparable의 compareTo는 어떤 객체 자체가 비교를 가능하도록 만들고
- * Comporator은 상황에 맞춰서 비교를 한다.
+ * Comporator는 Comparable의 함수보다 높은 우선순위를 가지며
+ * 클래스를 만들고 객체를 생성하는 불편함 없이 바로 객체를 만들기 위해서 사용되는 anonymous클래스
  * 
  */
 package sort;
@@ -54,7 +55,9 @@ public class CompareableComparator {
 		         @Override
 		         public int compare(Integer o1, Integer o2) {
 		           /* return o2.intValue()-o1.intValue();*/ // 양수와 음수가 섞일때 문제가 생긴다.
-		            return o2.compareTo(o1);
+		            // return o2.compareTo(o1);
+		        	return o1 - o2; /* 오름차순 */
+		        	return o2 - o1; /* 내림차순 */
 		         }
 		      } );
 		      System.out.println(Arrays.toString(arr2));

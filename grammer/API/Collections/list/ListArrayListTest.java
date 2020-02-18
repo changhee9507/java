@@ -16,14 +16,23 @@ public class ListArrayListTest {
 		al.add("Cass");
 		al.add("Terra");
 		al.add("Jangsu");
+		al.add(new String("Jangsu"));
 		
 		Iterator<String> itr = al.iterator();
 		while(itr.hasNext()) {
 			System.out.println(itr.next());
 		}
+		System.out.println();
+		al.remove(0); /* 인덱스를 이용한 삭제 */
+		al.remove("Jangsu"); /* 값을 이용한 삭제, String의 두 경우다 가능 */
+		
+		itr = al.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
 		
 		
-		ArrayList<Point> alPoint = new ArrayList<Point>();
+		/*ArrayList<Point> alPoint = new ArrayList<Point>();
 		alPoint.add(new Point(1,3));
 		alPoint.add(new Point(5,7));
 		alPoint.add(new Point(3,6));
@@ -36,7 +45,7 @@ public class ListArrayListTest {
 		while(itrPoint.hasNext()) {
 			System.out.println(itrPoint.next());
 		}
-		
+		*/
 	}
 
 }
