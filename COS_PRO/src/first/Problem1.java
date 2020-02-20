@@ -33,7 +33,11 @@ import java.util.*;
 public class Problem1 {
 
 	    public long solution(long num) {
-	        // Write code here.
+	        
+	    	/*2진수로 변환*/
+	    	String binaryNum = Integer.toBinaryString(num);
+	    	int decimalNum = Integer.parseInt(binaryNum);
+	    	
 	        long answer = 0;
 	        return answer;
 	    }
@@ -41,11 +45,9 @@ public class Problem1 {
 	    // The following is main method to output testcase.
 	    public static void main(String[] args) {
 	    	
-	        Solution sol = new Solution();
 	        long num = 9949999;
-	        long ret = sol.solution(num);
+	        long ret = solution(num);
 
-	        
 	        // Press Run button to receive output. 
 	        System.out.println("Solution: return value of the method is " + ret + " .");
 	    }
