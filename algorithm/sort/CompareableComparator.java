@@ -1,9 +1,13 @@
 /**
  * Comparable은 interface로 CompareTo라는 함수를 구현하도록 만들어서
  * 객체 포인터 자체로는 비교 불가능한 것을 개발자의 의도제대로 비교할 수 있게 만들어준다. 
+ * # 주의사항 : comparable은 타입을 설정해줘야한다 <>
+ * 
  * 
  * Comporator는 Comparable의 함수보다 높은 우선순위를 가지며
  * 클래스를 만들고 객체를 생성하는 불편함 없이 바로 객체를 만들기 위해서 사용되는 anonymous클래스
+ * # 사용할 때는 함수 안에 파라미터로 들어간다. ex) Arrays.sort( , new Comporator<타입> ....)
+ * 
  * 
  */
 package sort;
@@ -13,7 +17,8 @@ import java.util.Comparator;
 
 public class CompareableComparator {
 
-		   static class Student implements Comparable<Student>{
+			/* 기존의 비교능력이 없는 객체사이의 비교 능력을 만들어줌 */
+			static class Student implements Comparable<Student>{
 		      int no,score;
 
 		      public Student(int no, int score) {
@@ -26,8 +31,9 @@ public class CompareableComparator {
 		      public String toString() {
 		         return "Student [no=" + no + ", score=" + score + "]";
 		      }
+		      
 		      @Override
-		      public int compareTo(Student o) {
+		      public int compareTo(Student o) { /* 오름차순으로 설정 */
 		         return this.no - o.no;
 		      }
 		      
@@ -54,13 +60,38 @@ public class CompareableComparator {
 		      Arrays.sort(arr2, new Comparator<Integer>() {
 		         @Override
 		         public int compare(Integer o1, Integer o2) {
-		           /* return o2.intValue()-o1.intValue();*/ // 양수와 음수가 섞일때 문제가 생긴다.
+		            //return o2.intValue()-o1.intValue(); // 양수와 음수가 섞일때 문제가 생긴다.
 		            // return o2.compareTo(o1);
 		        	return o1 - o2; /* 오름차순 */
-		        	return o2 - o1; /* 내림차순 */
+		        	//return o2 - o1; /* 내림차순 */
 		         }
 		      } );
+    
+		      int[][] testArray = new int[][] {
+		    	  {7,2},
+		    	  {3,4},
+		    	  {8,9},
+		    	  {11,6},
+		    	  {1,2}
+		      };
+		      
+		      Arrays.sort(testArray, new Comparator<int[]>() { /* 비교되는 원소는 1차원 배열 */
+		    	 
+		    	  @Override
+		    	  public int compare(int[] o1, int[] o2) {
+		    		  
+		    		return o1[0] - o2[0];  
+		    		  
+		    	  }
+		      });
+		      
+		      for(int i =0; i<5; i++) {
+		    	  System.out.println(Arrays.toString(testArray[i]));
+		      }
+		      
+		      
 		      System.out.println(Arrays.toString(arr2));
+		      
 		      
 		      
 		      

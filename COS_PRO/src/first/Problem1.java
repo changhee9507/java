@@ -32,24 +32,38 @@ import java.util.*;
 
 public class Problem1 {
 
-	    public long solution(long num) {
-	        
-	    	/*2진수로 변환*/
-	    	String binaryNum = Integer.toBinaryString(num);
-	    	int decimalNum = Integer.parseInt(binaryNum);
-	    	
-	        long answer = 0;
-	        return answer;
-	    }
-
 	    // The following is main method to output testcase.
 	    public static void main(String[] args) {
 	    	
 	        long num = 9949999;
-	        long ret = solution(num);
-
-	        // Press Run button to receive output. 
-	        System.out.println("Solution: return value of the method is " + ret + " .");
+	        num++;
+	        
+	        char[] input = String.valueOf(num).toCharArray();
+	        
+	        System.out.println(Arrays.toString(input)); 
+	     
+	        for(int i = 0; i <input.length; i++) {
+	        	if(input[i] == '0') {
+	        		input[i] = '1';
+	        	}
+	        }
+	        
+	        System.out.println(Arrays.toString(input)); 
+	        int result = charToInt(input);
+	        
+	        System.out.println(result);
 	    }
+	    
+	    public static int charToInt(char[] input) {
+	    	int num = 0;
+	    	int pow = 0;
+	    	
+	    	for(int i = input.length-1; i >= 0 ; i--) {
+	    		num += (input[i] - '0') * Math.pow(10, pow++);
+	    	}
+	    	
+	    	return num;
+	    }
+	    
 
 }
