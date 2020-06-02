@@ -1,0 +1,3 @@
+SELECT EMPNO,ENAME,COMM
+FROM EMP
+WHERE COMM = 300 OR COMM = 500 OR COMM = 1400; /* WHERE의 조건은 OR과 AND으로 연결할 수 있고 ()를 이용할 수도 있다. */
