@@ -5,7 +5,7 @@
  */
 package __004__programmers;
 
-public class Solution {
+public class Solution_L2_ {
 
 	public static void main(String[] args) {
 
